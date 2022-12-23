@@ -1,0 +1,133 @@
+<html>
+<head>
+
+
+<style>
+body {
+  font-family: Verdana, sans-serif;
+}
+.slidecontainer,.slidecontainer2 {
+	width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+	position:absolute;
+	left:2px;
+	-webkit-appearance: none; /* Override default CSS styles */
+	appearance: none;
+	width: 600px;
+	height: 25px; /* Specified height */
+	background: #d3d3d3; /* Grey background */
+	outline: solid; /* Remove outline */
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+	opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	background: #04AA6D; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	background: #04AA6D; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+}
+
+
+</style>
+</head>
+<body background="D:\Users\khuha\Desktop\LMAo\Feedback for definitinve\background.png" text="white" style=" background-size: 100% 100%">
+	<h2></h2>
+	<form style="background-color:rgba(214, 214, 194,0.33); height: 450px;width: 650px; position: absolute;left:450px; top:150px;overflow-y: scroll;" >
+		<label for="fname" style="position:absolute;left:80px">1. First name:</label>
+		<input type="text" id="fname" name="fname"  required style="opacity:0.33;position: absolute;left:200px; border-radius: 5px;"><br> 
+		<label for="lname" style="position:absolute;left:80px">2. Last	name:</label>
+		<input type="text" id="lname" required name="lname" style="opacity:0.33;position: absolute;left:200px;border-radius: 5px;"><br><br>
+		<label for="intro" style=opacity:0.33></label> 
+		<p style="left:100px">3. Where did you hear about us from?</p>
+		<div class=optionsIntro style="opacity:0.33;left:100px">
+		<select id="intro" name="cars" style=opacity:0.33 required>
+			<option value="ad" style="border-radius: 5px;opacity:0.33">From an advertisement</option>
+			<option value="fr" style="border-radius: 5px;opacity:0.33">From a friend/relative</option>
+			<option value="pc" style="border-radius: 5px;opacity:0.33">From a previous customer</option>
+			<option value="emp" style="border-radius:5px;opacity:0.33">From a current employee</option>
+		</select>
+		</div>
+		<p style="left:100px">4. How would you describe our service in three words</p>
+		<input required type="text" placeholder="word1"  style="opacity:0.33;left:100px;border-radius: 5px;"/>
+		<input required type="text" placeholder="word2" style="opacity:0.33;left:100px;border-radius: 5px;"/>
+		<input required type="text" placeholder="word3" style="opacity:0.33;left:100px;border-radius: 5px;"/>
+		<p style="left:100px">5. Do you believe our services are worth the price?</p><br> 
+		<input required type="radio" name="pets" value="Yes" style="opacity:0.33"> Yes 
+		<input required type="radio" name="pets" value="No" style="opacity:0.33"> No<br>
+		
+			<div class="slidecontainer">
+				<p>
+					6. Rate your experience: <span id="demo"></span>
+				</p>
+				<br> <input required type="range" min="0" max="10" value="5"
+					class="slider" id="myRange">
+				<p style="position: absolute; left: 2px; top: 380px;">0</p>
+				<p style="position: absolute; left: 600px; top: 380px;">10</p>
+				<br>
+				<br>
+
+			</div>
+			<script>
+			var slider = document.getElementById("myRange");
+			var output = document.getElementById("demo");
+			output.innerHTML = slider.value; // Display the default slider value
+
+			// Update the current slider value (each time you drag the slider handle)
+			slider.oninput = function() {
+				output.innerHTML = this.value;
+			}
+		</script>
+			<div class="slidecontainer2">
+				<p>
+					7. How likely are you to return: <span id="demo2"></span>
+				</p>
+				<br> <input required type="range" min="0" max="10" value="5"
+					class="slider" id="myRange2">
+				<p style="position: absolute; left: 2px; top: 485px;">Not Likely</p>
+				<p style="position: absolute; left: 555px; top: 485px;">Definitely</p>
+				<br>
+
+			</div><br><br>
+
+			<script>
+			var slider = document.getElementById("myRange2");
+			var output2 = document.getElementById("demo2");
+			output2.innerHTML = slider.value; // Display the default slider value
+
+			// Update the current slider value (each time you drag the slider handle)
+			slider.oninput = function() {
+				output2.innerHTML = this.value;
+			}
+		</script>
+		<label for="exp" style="position:absolute">8. Please Describe your overall experience</label><br>
+		<input type="text" id="fname" name="exp"  minlength="50" maxlength="200" required style="opacity:0.33;position: absolute;left:2px; border-radius: 5px;width:550px; height:120px;"><br> 
+		<br>
+		<input type="submit" value="Submit" style="opacity:0.33;position:absolute; left:300;top:700px; border-radius:5px">
+
+
+	</form>
+
+
+</body>
+
+</html>
